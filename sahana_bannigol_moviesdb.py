@@ -28,7 +28,6 @@ cursor.execute("INSERT INTO movies VALUES('Lagaan','Aamir Khan','Gracy Singh','A
 """Reading Data from the Database and Simple SELECT statement to query all rows from the Movies table"""
 
 rows = cursor.execute("SELECT * FROM movies").fetchall()
-#print(rows)
 for i in rows:
   name,actor,actress,director,year = i
   print(name+"\t"+actor+"\t"+actress+"\t"+director+"\t"+str(year))
@@ -36,7 +35,6 @@ for i in rows:
 """Query with parameter like actor name to select movies based on the actor's name."""
 
 actor_rows = cursor.execute("SELECT * FROM movies WHERE actor='SRK'").fetchall()
-print(len(actor_rows))
 for i in actor_rows:
   name,actor,actress,director,year = i
   print(name+"\t"+actor+"\t"+actress+"\t"+director+"\t"+str(year))
